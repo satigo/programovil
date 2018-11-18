@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Consumo REST
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list inset>
+        <h1>Usuario Registrados en la base</h1>
+        <button ion-item *ngFor="let usuario of users">
+            {{usuario.nombre}} - {{usuario.contra}}
+        </button>
+    </ion-list>
+</ion-content>
