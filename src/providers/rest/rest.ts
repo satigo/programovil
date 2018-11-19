@@ -1,5 +1,7 @@
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
+
 
 
 
@@ -23,6 +25,36 @@ export class RestProvider {
 obtenerproductos(){
   return this.http.get('http://localhost:1414/restful/productos.php');
 }
+
+eliminarproductos(idproducto){
+  //const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+  const url='http://localhost:1414/restful/productos.php/?idproductos='+idproducto;
+  return this.http.delete(url);
+}
+
+remove(id) {
+  const dir='http://localhost:1414/restful/productos.php/';
+  return new Promise((resolve, reject) => {
+    let url = dir + '?idproductos=' + id;
+    this.http.delete(url)
+      .subscribe((result: any) => {
+        resolve(result.json());
+      },
+      (error) => {
+        reject(error.json());
+      });
+  });
+}
+
+
+/*deleteUser (id: string): Observable<User> {
+  const url = `${this.usersUrl}/${id}`;
+
+  return this.http.delete<User>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted user id=${id}`)),
+    catchError(this.handleError<User>('deleteUser'))
+  );
+}*/
 
 obtenerusuario(idusuario){
 return this.http.get('http://localhost:1414/restful/usuarios.php/?idusuario='+idusuario);

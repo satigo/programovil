@@ -25,6 +25,7 @@ import { DetallesPage } from '../pages/detalles/detalles';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     DetallesPage
   ],
   providers: [

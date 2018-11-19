@@ -28,6 +28,11 @@ export class HomePage {
     this.navCtrl.push(DetallesPage,{"producto":producto});
   }
 
+  eliminarProducto(producto){
+    //console.log(producto.idproductos);
+    this.restProvider.remove(producto.idproductos);
+  }
+
 
   
 
