@@ -28,12 +28,8 @@ import { AddProductPage } from '../pages/add-product/add-product';
   entryComponents: [
     MyApp,
     HomePage,
-<<<<<<< HEAD
-    DetallesPage
-=======
     DetallesPage,
     AddProductPage
->>>>>>> 2d7e750f2b122285ac8348f4e96a1b415d362691
   ],
   providers: [
     StatusBar,

@@ -30,19 +30,16 @@ export class HomePage {
     this.navCtrl.push(DetallesPage,{"producto":producto});
   }
 
-<<<<<<< HEAD
   eliminarProducto(producto){
     //console.log(producto.idproductos);
     this.restProvider.remove(producto.idproductos);
   }
 
-=======
   irCrearProducto(){
     this.navCtrl.push(AddProductPage);
   }
 
 
->>>>>>> 2d7e750f2b122285ac8348f4e96a1b415d362691
 
 
 }
