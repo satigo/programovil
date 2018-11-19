@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { RestProvider } from '../../providers/rest/rest';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { DetallesPage } from '../detalles/detalles';
+import { AddProductPage } from '../add-product/add-product';
 
 @Component({
   selector: 'page-home',
@@ -11,8 +13,8 @@ import { DetallesPage } from '../detalles/detalles';
 })
 export class HomePage {
   productos: any;
-  constructor(public navCtrl: NavController, public restProvider:RestProvider) {  
- 
+  constructor(public navCtrl: NavController, public restProvider:RestProvider) {
+
   }
 
   ionViewDidLoad(){
@@ -28,7 +30,11 @@ export class HomePage {
     this.navCtrl.push(DetallesPage,{"producto":producto});
   }
 
+  irCrearProducto(){
+    this.navCtrl.push(AddProductPage);
+  }
 
-  
+
+
 
 }

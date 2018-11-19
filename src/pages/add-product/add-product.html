@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Agregar productos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form [formGroup]="form" (ngSubmit)="guardarProducto()" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" floating>categoria</ion-label>
+          <ion-input formControlName="categoria"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('categoria').errors && form.get('categoria').touched">
+          <p *ngIf="form.get('categoria').hasError('required')">Es querido</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>imagen</ion-label>
+          <ion-input formControlName="imagen"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('imagen').errors && form.get('imagen').touched">
+          <p *ngIf="form.get('imagen').hasError('required')">Es querido</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>Existencia</ion-label>
+          <ion-input formControlName="existencia"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('existencia').errors && form.get('existencia').touched">
+          <p *ngIf="form.get('existencia').hasError('required')">Es querido</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>Precio</ion-label>
+          <ion-input formControlName="precio"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('precio').errors && form.get('precio').touched">
+          <p *ngIf="form.get('precio').hasError('required')">Es querido</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>descripcion</ion-label>
+          <ion-input formControlName="descripcion"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('descripcion').errors && form.get('descripcion').touched">
+          <p *ngIf="form.get('descripcion').hasError('required')">Es querido</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="form.get('nombre').errors && form.get('nombre').touched">
+          <p *ngIf="form.get('nombre').hasError('required')">Es querido</p>
+        </ion-item>
+      </ion-list>
+      <button ion-button block type="submit" [disabled]="form.invalid">Guardar</button>
+    </form>
+  </ion-card-content>
+</ion-content>

@@ -21,11 +21,20 @@ export class RestProvider {
   }
 
 obtenerproductos(){
-  return this.http.get('http://localhost:1414/restful/productos.php');
+  return this.http.get('http://localhost:1212/restful/productos.php');
 }
 
 obtenerusuario(idusuario){
-return this.http.get('http://localhost:1414/restful/usuarios.php/?idusuario='+idusuario);
+return this.http.get('http://localhost:1212/restful/usuarios.php/?idusuario='+idusuario);
 }
-
+addProducto(data) {
+  return new Promise((resolve, reject) => {
+    this.http.post('http://localhost:1212/restful/productos.php', JSON.stringify(data))
+      .subscribe(res => {
+        resolve(res);
+      }, (err) => {
+        //reject(err);
+      });
+  });
+}
 }
