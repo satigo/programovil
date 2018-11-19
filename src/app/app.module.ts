@@ -10,12 +10,14 @@ import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
 import { DetallesPage } from '../pages/detalles/detalles';
+import { AddProductPage } from '../pages/add-product/add-product';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetallesPage
+    DetallesPage,
+    AddProductPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,12 @@ import { DetallesPage } from '../pages/detalles/detalles';
   entryComponents: [
     MyApp,
     HomePage,
+<<<<<<< HEAD
     DetallesPage
+=======
+    DetallesPage,
+    AddProductPage
+>>>>>>> 2d7e750f2b122285ac8348f4e96a1b415d362691
   ],
   providers: [
     StatusBar,
