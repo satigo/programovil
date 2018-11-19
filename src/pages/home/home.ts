@@ -3,23 +3,31 @@ import { NavController } from 'ionic-angular';
 
 import { RestProvider } from '../../providers/rest/rest';
 
+import { DetallesPage } from '../detalles/detalles';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  users: any;
+  productos: any;
   constructor(public navCtrl: NavController, public restProvider:RestProvider) {  
  
   }
 
   ionViewDidLoad(){
-    this.restProvider.obtenerdatos()
+    this.restProvider.obtenerproductos()
     .subscribe(
-      (data)=>{this.users=data;},
+      (data)=>{this.productos=data;},
       (error)=>{console.log(error);}
     )
   }
+
+  irPaginaDetalles(producto){
+    console.log(producto);
+    this.navCtrl.push(DetallesPage,{"producto":producto});
+  }
+
 
   
 

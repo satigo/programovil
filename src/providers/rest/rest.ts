@@ -20,8 +20,8 @@ export class RestProvider {
     console.log('Hello RestProvider Provider');
   }
 
-obtenerdatos(){
-  return this.http.get('http://localhost:1414/restful/usuarios.php');
+obtenerproductos(){
+  return this.http.get('http://localhost:1414/restful/productos.php');
 }
 
 obtenerusuario(idusuario){

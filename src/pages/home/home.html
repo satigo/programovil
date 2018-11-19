@@ -6,11 +6,34 @@
     </ion-navbar>
 </ion-header>
 
+
+
 <ion-content padding>
-    <ion-list inset>
-        <h1>Usuario Registrados en la base</h1>
-        <button ion-item *ngFor="let usuario of users">
-            {{usuario.nombre}} - {{usuario.contra}}
-        </button>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let producto of productos">
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src="assets/imgs/default.png">
+                </ion-avatar>
+                <h2>{{producto.nombre}}</h2>
+            </ion-item>
+            <ion-item-options side="left">
+                <button (click)="irPaginaDetalles(producto)" ion-button color="light">
+                      <ion-icon name="more"></ion-icon>
+                      Detalles
+                    </button>
+                <button ion-button color="dark">
+                      <ion-icon name="brush"></ion-icon>
+                      Modificar
+                    </button>
+            </ion-item-options>
+            <ion-item-options side="right">
+                <button ion-button color="danger">
+                      <ion-icon name="remove"></ion-icon>
+                      Eliminar
+                    </button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
 </ion-content>

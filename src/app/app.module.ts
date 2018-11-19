@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
+import { DetallesPage } from '../pages/detalles/detalles';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DetallesPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { RestProvider } from '../providers/rest/rest';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    DetallesPage
   ],
   providers: [
     StatusBar,
